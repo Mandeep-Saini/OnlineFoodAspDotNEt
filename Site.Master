@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="OnlineFoodDelivery.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<title>My Restaurant</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Askbootstrap">
+	<meta name="author" content="Askbootstrap">
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="images/favicon2.png">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Icons -->
+	<link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+	<!-- Select2 CSS -->
+	<%--<link href="css/select2-bootstrap.css" rel="stylesheet" />
+	<link href="css/select2.min.css" rel="stylesheet" />--%>
+	<!-- Custom styles for this template -->
+	<link href="css/osahan2.min.css" rel="stylesheet">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<style>
+		.checked {
+			color: orange;
+		}
+
+		.auto-style1 {
+			width: 99px;
+			height: 78px;
+		}
+	</style>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div>
+			<div class="navbar navbar-light navbar-expand-lg bg-dark bg-faded ">
+				<div class="container-fluid">
+					<!-- logo -->
+					
+					<img alt="logo" class="auto-style1" src="images/logo1.jpg" />
+					<h5 class="auto-style3" style="color: white; padding: 10px;text-align:center; margin:auto;">Foodies</h5>
+
+					
+					
+					
+					<div class="navbar-collapse" id="navbarNavDropdown">
+						
+						<!-- login and my cart -->
+						<div class="col-md-12">
+							<ul class="list-inline main-nav-right" style="float:right;">
+								<li class="list-inline-item">
+									<a href="Login.aspx" class="btn btn-link"><i class="mdi mdi-account-circle"></i>Login/Sign Up</a>
+								</li>
+								<li class="list-inline-item cart-btn">
+									 <asp:HyperLink NavigateUrl="~/Cart.aspx" runat="server">
+                            <a href="Cart.aspx" data-toggle="offcanvas" class="btn btn-link border-none"><span class="glyphicon glyphicon-shopping-cart"></span><i class="mdi mdi-cart"></i>Cart
+                            <span id="spanCount" runat="server" class="badge"></span></a>
+                        </asp:HyperLink>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<ul id="navList" runat="server" class="nav navbar-nav"></ul>
+
+
+				</div>
+			</div>
+		</div>
+		 <nav class="navbar navbar-expand-lg navbar-light osahan-menu-2">
+         <div class="container-fluid">
+            
+               <ul class="navbar-nav margin-auto" style="font-weight: bold;">
+                  <li class="nav-item">
+                     <a class="nav-link shop" href="index.aspx"><span class="mdi mdi-store"></span> Restaurant</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="index.aspx" class="nav-link">Home</a>
+                  </li>
+                    
+                  
+                    <li class="nav-item">
+                     <a href="Menu.aspx" class="nav-link">Menu</a>
+                  </li>
+                   <li class="nav-item">
+                     <a href="About.aspx" class="nav-link">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="Contact.aspx">Contact</a>
+                  </li>
+                    <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Restaurant
+                     </a>
+                     <div class="dropdown-menu" >
+                        <a class="dropdown-item" href="punjabi.aspx"><i class="mdi mdi-chevron-right" aria-hidden="true"></i> Punjabi Restaurant</a>
+                        
+                        
+                     </div>
+                  </li>
+               </ul>
+            
+         </div>
+      </nav>
+		<asp:Literal ID="litBreadcrumb" runat="server"></asp:Literal>
+		<asp:Label ID="lblPageHeader" runat="server"></asp:Label>
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+		</asp:ContentPlaceHolder>
+	</form>
+
+	<footer>
+		
+          <!-- Footer -->
+      <section class="section-padding footer bg-white border-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-3">
+                  <a class="logo" href="index.html"><img src="images/logo1.jpg" width="90" height="90"alt="logo"></a>
+                  <p><a class="text-dark" href="#"><i class="mdi mdi-phone"></i> +1 (416)899-7896</a></p>
+                  <p><a class="text-success" href="#"><i class="mdi mdi-email"></i> Foodies@info.com</a></p>
+                  <p><a class="text-primary" href="#"><i class="mdi mdi-web"></i> www.Foodies.com</a></p>
+               </div>
+               <div class="col-lg-2 col-md-2">
+                  
+               </div>
+               <div class="col-lg-2 col-md-2">
+                  
+               </div>
+               <div class="col-lg-2 col-md-2">
+                  <h6>ABOUT US</h6>
+                  <ul>
+                  <li><a href="#">Company Information</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Store Location</a></li>
+                  <li><a href="#">Affillate Program</a></li>
+                  <li><a href="#">Copyright</a></li>
+                   </ul>
+               </div>
+               <div class="col-lg-3 col-md-3">
+                  <h6 class="mb-3 mt-4">GET IN TOUCH</h6>
+                  <div class="footer-social">
+                     <a class="btn-facebook" href="#"><i class="mdi mdi-facebook"></i></a>
+                     <a class="btn-instagram" href="#"><i class="mdi mdi-instagram"></i></a>
+                     <a class="btn-messenger" href="#"><i class="mdi mdi-facebook-messenger"></i></a>
+                     <a class="btn-google" href="#"><i class="mdi mdi-google"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+          
+      </section>
+       <div class="pt-4 pb-4 footer-bottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-6">
+                  <p style="font-size: 1.2em;"> Copyright &copy; 2018 <strong class="text-dark">Foodies</strong>. All Rights Reserved<br>
+				 
+				  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      
+
+
+
+	</footer>
+</body>
+</html>
